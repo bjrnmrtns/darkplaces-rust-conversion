@@ -33,6 +33,7 @@ outputs = { self, nixpkgs, flake-utils, ... }:
 	    pkgs.SDL2
 	    pkgs.gcc
 	    pkgs.darwin.apple_sdk.frameworks.Carbon
+	    pkgs.darwin.apple_sdk.frameworks.CoreFoundation
           ];
       };
     });
