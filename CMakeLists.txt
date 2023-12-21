@@ -2,7 +2,7 @@ project(darkplaces)
 
 
 add_compile_options(-Wall -Winline -Werror=vla -Werror=c++-compat -Wwrite-strings -Wshadow -Wold-style-definition -Wstrict-prototypes -Wsign-compare -Wdeclaration-after-statement -Wmissing-prototypes)
-add_compile_definitions(-DCONFIG_MENU -DVIDEO_CAPTURE)
+add_compile_definitions(CONFIG_MENU VIDEO_CAPTURE)
 
 find_package(SDL2 REQUIRED)
 

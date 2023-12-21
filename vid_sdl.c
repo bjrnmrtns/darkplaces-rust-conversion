@@ -1245,28 +1245,12 @@ void Sys_SDL_HandleEvents(void)
 						break;
 					case SDL_WINDOWEVENT_HIT_TEST:
 						break;
-					case SDL_WINDOWEVENT_ICCPROF_CHANGED:
-						break;
-					case SDL_WINDOWEVENT_DISPLAY_CHANGED:
-						// this event can't be relied on in fullscreen, see SDL_WINDOWEVENT_MOVED above
-						vid.displayindex = event.window.data1;
-						break;
 					}
 				}
 				break;
 			case SDL_DISPLAYEVENT: // Display hotplugging
 				switch (event.display.event)
 				{
-					case SDL_DISPLAYEVENT_CONNECTED:
-						Con_Printf("Display %i connected: %s\nA vid_restart may be necessary!\n", event.display.display, SDL_GetDisplayName(event.display.display));
-						Cvar_SetValueQuick(&vid_info_displaycount, SDL_GetNumVideoDisplays());
-						// Ideally we'd call VID_ChangeDisplay_c() to try to switch to the preferred display here,
-						// but we may need a vid_restart first, see comments in VID_ChangeDisplay_c().
-						break;
-					case SDL_DISPLAYEVENT_DISCONNECTED:
-						Con_Printf("Display %i disconnected.\nA vid_restart may be necessary!\n", event.display.display);
-						Cvar_SetValueQuick(&vid_info_displaycount, SDL_GetNumVideoDisplays());
-						break;
 					case SDL_DISPLAYEVENT_ORIENTATION:
 						break;
 				}

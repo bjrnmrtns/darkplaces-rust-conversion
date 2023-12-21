@@ -37,6 +37,7 @@ outputs = { self, nixpkgs, flake-utils, ... }:
             # tool for converting from make to cmake and compiling in cmake build system
             pkgs.cmake
             pkgs.ninja
+            pkgs.llvm
 
             # tools for converting to rust
             pkgs.python3
