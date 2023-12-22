@@ -34,16 +34,22 @@ outputs = { self, nixpkgs, flake-utils, ... }:
 	    pkgs.zlib
 	    pkgs.gcc
 
+	    pkgs.darwin.apple_sdk.frameworks.Carbon
+            pkgs.darwin.apple_sdk.frameworks.CoreFoundation
+
             # tool for converting from make to cmake and compiling in cmake build system
             pkgs.cmake
             pkgs.ninja
             pkgs.llvm
+	    pkgs.llvmPackages.libllvm
+	    pkgs.llvmPackages.libcxxClang
+	    pkgs.libiconv
 
             # tools for converting to rust
             pkgs.python3
             pkgs.python3Packages.toml
-            pkgs.bencode
-            pkgs.bencodetools
+            pkgs.python3Packages.pyyaml
+            pkgs.python3Packages.cbor
           ];
       };
     });
